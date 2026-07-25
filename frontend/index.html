@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Intell Journalist — AI-powered world news, grounded in trusted reporting.">
+  <title>Intell Journalist — World News, Clearly Explained</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <div class="app-shell">
+    <input class="nav-toggle" id="nav-toggle" type="checkbox" aria-hidden="true">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand-row">
+        <a class="brand" href="#" aria-label="Intell Journalist home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img"><path d="M6 7.5A3.5 3.5 0 0 1 9.5 4h13A3.5 3.5 0 0 1 26 7.5v17a3.5 3.5 0 0 1-3.5 3.5h-13A3.5 3.5 0 0 1 6 24.5v-17Z"/><path d="M11 10h10M11 15h10M11 20h6"/></svg>
+          </span>
+          <span>Intell<span>Journalist</span></span>
+        </a>
+        <label class="icon-button sidebar-close" for="nav-toggle" aria-label="Close navigation">
+          <svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </label>
+      </div>
+
+      <button class="new-briefing" type="button" data-action="new-briefing">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        New briefing
+        <kbd>⌘ K</kbd>
+      </button>
+
+      <nav class="main-nav" aria-label="News navigation">
+        <p class="nav-label">Workspace</p>
+        <a class="nav-item active" href="#briefing">
+          <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg>
+          Today’s briefing
+          <span class="live-dot" aria-label="Live"></span>
+        </a>
+        <a class="nav-item" href="#discover">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
+          Discover
+        </a>
+        <a class="nav-item" href="#bookmarks" data-action="show-bookmarks">
+          <svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+          Bookmarks
+          <span class="count">12</span>
+        </a>
+
+        <p class="nav-label nav-label-spaced">Following</p>
+        <a class="nav-item" href="#world"><span class="category-dot blue"></span>World</a>
+        <a class="nav-item" href="#technology"><span class="category-dot violet"></span>Technology</a>
+        <a class="nav-item" href="#business"><span class="category-dot amber"></span>Business</a>
+        <a class="nav-item" href="#climate"><span class="category-dot green"></span>Climate</a>
+      </nav>
+
+      <div class="sidebar-card">
+        <span class="sidebar-card-icon" aria-hidden="true">✦</span>
+        <div>
+          <strong>Morning brief ready</strong>
+          <p>8 stories · 5 min read</p>
+        </div>
+        <button type="button" aria-label="Open morning brief">→</button>
+      </div>
+
+      <a class="profile-card" id="profile-trigger" href="login.html" aria-haspopup="true" aria-expanded="false">
+        <span class="avatar">AR</span>
+        <span class="profile-copy">
+          <strong>Aruvinten Ramanathan</strong>
+          <small>Personal workspace</small>
+        </span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>
+      </a>
+      <div class="profile-menu" id="profile-menu" hidden>
+        <a href="login.html" data-profile-action="login">Sign in</a>
+        <button type="button" data-profile-action="logout">Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <label class="icon-button menu-button" for="nav-toggle" aria-label="Open navigation">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </label>
+        <div class="topbar-title">
+          <span>Today</span>
+          <strong>World briefing</strong>
+        </div>
+        <div class="topbar-actions">
+          <button class="status-pill" id="live-coverage" type="button" aria-pressed="true"><span></span> Live coverage</button>
+          <button class="icon-button" id="notifications-button" type="button" aria-label="Notifications">
+            <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+            <span class="notification-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="welcome" id="briefing">
+          <div>
+            <p class="eyebrow"><span></span> <time id="current-date"></time></p>
+            <h1>Good morning, Aruvinten.</h1>
+            <p class="welcome-copy">Here’s what matters around the world right now, distilled from trusted sources.</p>
+          </div>
+          <div class="brief-meta" aria-label="Briefing information">
+            <div><strong>24</strong><span>Sources</span></div>
+            <i></i>
+            <div><strong>8</strong><span>Top stories</span></div>
+            <i></i>
+            <div><strong>5 min</strong><span>Read time</span></div>
+          </div>
+        </section>
+
+        <section class="ask-panel" aria-labelledby="ask-title">
+          <div class="ask-heading">
+            <span class="spark-icon" aria-hidden="true">✦</span>
+            <div>
+              <h2 id="ask-title">Ask about the news</h2>
+              <p>Answers are grounded in current reporting and always include sources.</p>
+            </div>
+          </div>
+          <div class="chat-transcript" id="chat-transcript" aria-live="polite" hidden></div>
+          <form class="ask-box" id="chat-form">
+            <label class="sr-only" for="news-question">Ask a question about the news</label>
+            <textarea id="news-question" rows="2" placeholder="What happened in Malaysia today?"></textarea>
+            <div class="ask-controls">
+              <div class="composer-tools">
+                <button type="button" aria-label="Attach a source"><svg viewBox="0 0 24 24"><path d="m21 11-8.5 8.5a6 6 0 0 1-8.5-8.5l9-9a4 4 0 0 1 5.7 5.7l-9 9a2 2 0 1 1-2.8-2.8L15 5.8"/></svg></button>
+                <button type="button" class="scope-button" id="scope-button"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg> <span class="scope-label">All news</span> <span>⌄</span></button>
+              </div>
+              <button class="send-button" type="submit" aria-label="Send question">
+                <svg viewBox="0 0 24 24"><path d="m5 12 7-7 7 7M12 5v14"/></svg>
+              </button>
+            </div>
+          </form>
+          <div class="suggestion-row" aria-label="Suggested questions">
+            <button type="button" data-prompt="What happened in Malaysia today?">Malaysia today</button>
+            <button type="button" data-prompt="Summarise the latest technology news.">Latest in technology</button>
+            <button type="button" data-prompt="Compare how trusted sources report the top story.">Compare trusted sources</button>
+            <button type="button" data-prompt="Show positive news from around the world.">Positive world news</button>
+          </div>
+        </section>
+
+        <section class="section-block" id="discover">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Personalised for you</p>
+              <h2>Your morning briefing</h2>
+            </div>
+            <button class="text-button" type="button">View full briefing <span>→</span></button>
+          </div>
+
+          <article class="lead-story">
+            <div class="lead-visual" role="img" aria-label="Abstract global news visualization">
+              <div class="globe-grid"></div>
+              <span class="region-label label-asia">ASIA</span>
+              <span class="region-label label-europe">EUROPE</span>
+              <span class="region-label label-americas">AMERICAS</span>
+              <div class="pulse pulse-one"></div>
+              <div class="pulse pulse-two"></div>
+              <div class="pulse pulse-three"></div>
+              <div class="visual-caption"><span>LIVE</span> Global developments</div>
+            </div>
+            <div class="lead-copy">
+              <div class="story-kicker"><span class="category-tag">WORLD</span><span>Top story</span><time datetime="2026-07-18T08:12">12 min ago</time></div>
+              <h3>Regional leaders gather as trade and climate talks enter a decisive weekend</h3>
+              <p>Delegations are focusing on resilient supply chains, clean-energy investment and a shared framework for cross-border cooperation.</p>
+              <div class="ai-summary">
+                <span aria-hidden="true">✦</span>
+                <p><strong>Why it matters</strong> The outcome may shape regional policy and business confidence through the second half of the year.</p>
+              </div>
+              <footer class="story-footer">
+                <div class="source-stack">
+                  <span>R</span><span>A</span><span>B</span>
+                  <p><strong>3 trusted sources</strong><small>Reuters · AP · BBC</small></p>
+                </div>
+                <button class="round-button" type="button" aria-label="Open story"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              </footer>
+            </div>
+          </article>
+        </section>
+
+        <section class="section-block latest-section">
+          <div class="section-heading section-heading-filter">
+            <div>
+              <p class="eyebrow">Across the wire</p>
+              <h2>Latest stories</h2>
+            </div>
+            <div class="filter-row" aria-label="News filters">
+              <button class="filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter" type="button" data-filter="malaysia" aria-pressed="false">Malaysia</button>
+              <button class="filter" type="button" data-filter="world" aria-pressed="false">World</button>
+              <button class="filter" type="button" data-filter="technology" aria-pressed="false">Technology</button>
+              <button class="filter-icon" type="button" aria-label="More filters"><svg viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></svg></button>
+            </div>
+          </div>
+
+          <div class="story-grid">
+            <article class="story-card" data-story-id="ai-standards" data-category="technology" data-country="world">
+              <div class="card-art art-tech"><span>01</span><i></i><i></i><i></i></div>
+              <div class="card-body">
+                <div class="story-kicker"><span class="category-tag violet-tag">TECHNOLOGY</span><time>28 min ago</time></div>
+                <h3>New open standards aim to make AI systems easier to evaluate</h3>
+                <p>Researchers and industry groups are proposing clearer benchmarks for reliability and transparency.</p>
+                <footer><span class="publisher-icon">T</span><strong>Tech Review</strong><button type="button" data-action="bookmark" aria-label="Bookmark story" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button></footer>
+              </div>
+            </article>
+
+            <article class="story-card" data-story-id="heat-resilience" data-category="climate" data-country="world">
+              <div class="card-art art-climate"><span class="sun"></span><span class="horizon"></span></div>
+              <div class="card-body">
+                <div class="story-kicker"><span class="category-tag green-tag">CLIMATE</span><time>41 min ago</time></div>
+                <h3>Cities accelerate heat-resilience plans ahead of a warmer season</h3>
+                <p>Urban shade, cooling centres and improved alerts are central to the new local programmes.</p>
+                <footer><span class="publisher-icon green-publisher">E</span><strong>Earth Desk</strong><button type="button" data-action="bookmark" aria-label="Bookmark story" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button></footer>
+              </div>
+            </article>
+
+            <article class="story-card" data-story-id="asian-markets" data-category="business" data-country="malaysia">
+              <div class="card-art art-business"><div class="bars"><i></i><i></i><i></i><i></i><i></i></div><span class="trend">↗</span></div>
+              <div class="card-body">
+                <div class="story-kicker"><span class="category-tag amber-tag">BUSINESS</span><time>1 hr ago</time></div>
+                <h3>Asian markets steady as investors weigh fresh economic signals</h3>
+                <p>Technology and consumer shares led early gains while energy prices remained in focus.</p>
+                <footer><span class="publisher-icon amber-publisher">F</span><strong>Financial Wire</strong><button type="button" data-action="bookmark" aria-label="Bookmark story" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button></footer>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="trust-note">
+          <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3 7.8 7.5 9.5 4.5-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></div>
+          <div><strong>News you can verify</strong><p>Every AI summary is grounded in reporting from named publishers. Open any source to read the original story.</p></div>
+          <a href="#methodology">Our methodology <span>→</span></a>
+        </section>
+
+        <footer class="site-footer">
+          <span>© 2026 Intell Journalist</span>
+          <nav aria-label="Footer navigation"><a href="#about">About</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#feedback">Send feedback</a></nav>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <script src="js/api.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/news.js" defer></script>
+  <script src="js/chat.js" defer></script>
+</body>
+</html>
